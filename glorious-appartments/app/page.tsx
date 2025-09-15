@@ -11,8 +11,10 @@ export default function Home() {
             <Image src={logo} alt="" height={28} width={30} className="shadow-md" />
             Glorious Appartment
           </Link>
-          <div className="flex items-center">
-            Links
+          <div className="flex items-center gap-24">
+            <Link href={''}>Home</Link>
+            <Link href={''}>Services</Link>
+            <Link href={''}>Contact Us</Link>
           </div>
           <button>theme toggle</button>
         </nav>
