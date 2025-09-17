@@ -51,14 +51,14 @@ const ContactUs = () => {
         </div>
 
       
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {carouselImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
                 index === currentImageIndex 
-                  ? 'bg-[#b39800] scale-125' 
+                  ? 'bg-[#b39800]' 
                   : 'bg-white/50 hover:bg-white/80'
               }`}
             />
@@ -80,7 +80,7 @@ const ContactUs = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:transform hover:scale-110 cursor-pointer duration-500 border-l-4 border-[#b39800]">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 bg-[#b39800] rounded-full flex items-center justify-center">
-                  <Phone className="w-8 h-8 text-black" />
+                  <Phone className="w-8 h-8 dark:text-black text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Call Us</h3>
@@ -98,7 +98,7 @@ const ContactUs = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:transform hover:scale-110 cursor-pointer duration-500 border-l-4 border-[#b39800]">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 bg-[#b39800] rounded-full flex items-center justify-center">
-                  <Mail className="w-8 h-8 text-black" />
+                  <Mail className="w-8 h-8 dark:text-black text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
@@ -116,7 +116,7 @@ const ContactUs = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:transform hover:scale-110 cursor-pointer duration-500 border-l-4 border-[#b39800]">
               <div className="flex items-start space-x-4">
                 <div className="w-16 h-16 bg-[#b39800] rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-8 h-8 text-black" />
+                  <MapPin className="w-8 h-8 dark:text-black text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Visit Us</h3>
@@ -134,7 +134,7 @@ const ContactUs = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all hover:transform hover:scale-110 cursor-pointer duration-500 border-l-4 border-[#b39800]">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 bg-[#b39800] rounded-full flex items-center justify-center">
-                  <Clock className="w-8 h-8 text-black" />
+                  <Clock className="w-8 h-8 dark:text-black text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Availabilty</h3>

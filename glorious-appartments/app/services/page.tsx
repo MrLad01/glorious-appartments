@@ -118,13 +118,13 @@ const ServicesPage = () => {
           </p>
         </div>
 
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setHeroImageIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === heroImageIndex ? 'bg-[#d4b502] scale-125' : 'bg-white/50 hover:bg-white/80'
+              className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
+                index === heroImageIndex ? 'bg-[#d4b502]' : 'bg-white/50 hover:bg-white/80'
               }`}
             />
           ))}
@@ -189,7 +189,7 @@ const ServicesPage = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-[#d4b502] rounded-full flex items-center justify-center">
-                  <Bed className="w-6 h-6 text-black" />
+                  <Bed className="w-6 h-6 dark:text-black text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Spacious 2BR Flat</h3>
               </div>
@@ -250,7 +250,7 @@ const ServicesPage = () => {
             <div className="space-y-6 lg:order-1">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-[#d4b502] rounded-full flex items-center justify-center">
-                  <Home className="w-6 h-6 text-black" />
+                  <Home className="w-6 h-6 dark:text-black text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Premium 3BR Flat</h3>
               </div>
@@ -437,21 +437,21 @@ const ServicesPage = () => {
         </section>
 
         {/* Contact CTA */}
-        <section className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white">
+        <section className="dark:bg-gradient-to-r shadow-md from-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white">
           <h3 className="text-3xl font-bold mb-4 text-[#d4b502]">Ready to Book Your Perfect Stay?</h3>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl dark:text-gray-300 text-gray-700 mb-8 max-w-2xl mx-auto">
             Experience luxury living at Glorious Apartment. Contact us today to reserve your premium accommodation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:+2348039636839"
-              className="inline-flex items-center px-8 py-4 bg-[#d4b502] text-black font-bold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-[#d4b502] dark:text-black font-bold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105"
             >
               📞 Call Now: +234 803 9636 839
             </a>
             <button
               onClick={() => window.location.href = '/contact'}
-              className="inline-flex items-center px-8 py-4 border-2 border-[#d4b502] text-[#d4b502] font-bold rounded-lg hover:bg-[#d4b502] hover:text-black transition-all cursor-pointer duration-300"
+              className="inline-flex items-center px-8 py-4 border-2 border-[#d4b502] text-[#d4b502] font-bold rounded-lg hover:bg-[#d4b502] dark:hover:text-black hover:text-white transition-all cursor-pointer duration-300"
             >
               Get More Info
             </button>

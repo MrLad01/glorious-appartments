@@ -104,8 +104,8 @@ export default function Home() {
 
 
   return (
-    <div className="text-white min-h-screen bg-gray-900">
-      <div className="relative h-screen overflow-hidden">
+    <div className="text-white min-h-screen dark:bg-gray-900">
+      <div className="relative h-[90vh] overflow-hidden">
         {/* Fallback background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -254,17 +254,17 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gray-700 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-[#d4b502]/20 to-[#d4b502]/5 flex items-center justify-center">
+            <div className="dark:bg-gray-700 dark:border-0 border shadow-md rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+              <div className="h-48 bg-white dark:bg-gradient-to-br dark:from-[#d4b502]/20 dark:to-[#d4b502]/5 flex items-center justify-center dark:border-0 border-b border-gray-300">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-[#d4b502] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-black">2BR</span>
+                    <span className="text-2xl font-bold dark:text-black">2BR</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">2 Bedroom Flat</h3>
+                  <h3 className="text-xl font-bold dark:text-white text-gray-700">2 Bedroom Flat</h3>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-300 mb-4">Spacious 2-bedroom apartments perfect for small families or professionals seeking comfort and style.</p>
+                <p className="dark:text-gray-300 text-gray-600 mb-4">Spacious 2-bedroom apartments perfect for small families or professionals seeking comfort and style.</p>
                 <ul className="text-sm text-gray-400 space-y-1">
                   <li>• Fully equipped kitchen</li>
                   <li>• Modern amenities</li>
@@ -273,17 +273,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-gray-700 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-[#d4b502]/20 to-[#d4b502]/5 flex items-center justify-center">
+            <div className="dark:bg-gray-700 dark:border-0 border shadow-md rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+              <div className="h-48 bg-white dark:bg-gradient-to-br dark:from-[#d4b502]/20 dark:to-[#d4b502]/5 flex items-center justify-center dark:border-0 border-b border-gray-300">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-[#d4b502] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-black">3BR</span>
+                    <span className="text-2xl font-bold dark:text-black">3BR</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">3 Bedroom Flat</h3>
+                  <h3 className="text-xl font-bold dark:text-white text-gray-700">3 Bedroom Flat</h3>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-300 mb-4">Luxurious 3-bedroom apartments ideal for larger families who value space and premium living.</p>
+                <p className="dark:text-gray-300 text-gray-600 mb-4">Luxurious 3-bedroom apartments ideal for larger families who value space and premium living.</p>
                 <ul className="text-sm text-gray-400 space-y-1">
                   <li>• 24hrs power supply</li>
                   <li>• CCTV surveillance</li>
@@ -292,17 +292,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-gray-700 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-[#d4b502]/20 to-[#d4b502]/5 flex items-center justify-center">
+            <div className="dark:bg-gray-700 dark:border-0 border shadow-md rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+              <div className="h-48 bg-white dark:bg-gradient-to-br dark:from-[#d4b502]/20 dark:to-[#d4b502]/5 flex items-center justify-center dark:border-0 border-b border-gray-300">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-[#d4b502] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-black">★</span>
+                    <span className="text-2xl font-bold dark:text-black">★</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">Premium Amenities</h3>
+                  <h3 className="text-xl font-bold dark:text-white text-gray-700">Premium Amenities</h3>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-300 mb-4">Experience top-tier amenities designed to make your stay comfortable and convenient.</p>
+                <p className="dark:text-gray-300 text-gray-600 mb-4">Experience top-tier amenities designed to make your stay comfortable and convenient.</p>
                 <ul className="text-sm text-gray-400 space-y-1">
                   <li>• Conducive environment</li>
                   <li>• Tight security</li>
@@ -315,7 +315,7 @@ export default function Home() {
           <div className="text-center">
             <button
               onClick={() => window.location.href = '/services'}
-              className="inline-flex items-center rounded-lg px-8 py-4 bg-[#d4b502] text-black font-bold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center rounded-lg px-8 py-4 bg-[#d4b502] dark:text-black font-bold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105"
             >
               VIEW ALL SERVICES
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -408,43 +408,43 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center group bg-gray-700 px-2 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+            <div className="text-center shadow-md group dark:bg-gray-700 px-2 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-br from-[#d4b502] to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-3">24/7 Power Supply</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-gray-700 mb-3">24/7 Power Supply</h3>
               <p className="text-sm text-gray-400">Uninterrupted power supply ensuring your comfort at all times</p>
             </div>
 
-            <div className="text-center group bg-gray-700 px-2 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+            <div className="text-center shadow-md group dark:bg-gray-700 px-2 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-br from-[#d4b502] to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-3">Maximum Security</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-gray-700 mb-3">Maximum Security</h3>
               <p className="text-sm text-gray-400">CCTV surveillance and tight security for your peace of mind</p>
             </div>
 
-            <div className="text-center group bg-gray-700 px-2 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+            <div className="text-center shadow-md group dark:bg-gray-700 px-2 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-br from-[#d4b502] to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-3">Prime Location</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-gray-700 mb-3">Prime Location</h3>
               <p className="text-sm text-gray-400">Located in Asero Estate Extension, Abeokuta - a serene environment</p>
             </div>
 
-            <div className="text-center group bg-gray-700 px-2 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+            <div className="text-center shadow-md group dark:bg-gray-700 px-2 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-20 h-20 bg-gradient-to-br from-[#d4b502] to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-3">Premium Comfort</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-gray-700 mb-3">Premium Comfort</h3>
               <p className="text-sm text-gray-400">Fully equipped with modern amenities for your ultimate comfort</p>
             </div>
           </div>
@@ -461,36 +461,36 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center group bg-gray-700 px-1 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+            <div className="text-center group shadow-md dark:bg-gray-700 px-1 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 bg-[#d4b502] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Call Us</h3>
+              <h3 className="text-lg font-bold dark:text-white text-gray-700 mb-2">Call Us</h3>
               <p className="text-[#d4b502] font-semibold">+234 803 9636 839</p>
               <p className="text-sm text-gray-400 mt-1">Available 24/7</p>
             </div>
 
-            <div className="text-center group bg-gray-700 px-1 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+            <div className="text-center group shadow-md dark:bg-gray-700 px-1 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 bg-[#d4b502] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Email Us</h3>
+              <h3 className="text-lg font-bold dark:text-white text-gray-700 mb-2">Email Us</h3>
               <p className="text-[#d4b502] font-semibold text-sm break-all">gloriousapartments2025@gmail.com</p>
               <p className="text-sm text-gray-400 mt-1">Quick response guaranteed</p>
             </div>
 
-            <div className="text-center group bg-gray-700 px-1 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
+            <div className="text-center group shadow-md dark:bg-gray-700 px-1 py-8 rounded-lg hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 bg-[#d4b502] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Visit Us</h3>
+              <h3 className="text-lg font-bold dark:text-white text-gray-700 mb-2">Visit Us</h3>
               <p className="text-[#d4b502] font-semibold text-sm">Priscilla Oluwafemi Street</p>
               <p className="text-sm text-gray-400">Asero Estate Extension, Abeokuta</p>
             </div>
@@ -499,7 +499,7 @@ export default function Home() {
           <div className="text-center">
             <button
               onClick={() => window.location.href = '/contact'}
-              className="inline-flex items-center px-10 py-4 bg-[#d4b502] text-black font-bold text-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 rounded-md shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-10 py-4 bg-[#d4b502] dark:text-black font-bold text-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 rounded-md shadow-lg hover:shadow-xl"
             >
               CONTACT US NOW
               <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
