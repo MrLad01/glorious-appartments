@@ -1,20 +1,22 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { 
-  Home, 
-  Bed, 
-  Wifi, 
-  Car, 
-  Shield, 
-  Zap, 
-  WashingMachine, 
-  Camera, 
-  ChevronLeft, 
+import {
+  Home,
+  Bed,
+  Wifi,
+  Car,
+  Shield,
+  Zap,
+  WashingMachine,
+  Camera,
+  ChevronLeft,
   ChevronRight,
   Star,
   Users,
   Calendar
 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const ServicesPage = () => {
   const [heroImageIndex, setHeroImageIndex] = useState(0);
@@ -22,10 +24,17 @@ const ServicesPage = () => {
   const [apartment3BRIndex, setApartment3BRIndex] = useState(0);
   const [amenitiesIndex, setAmenitiesIndex] = useState(0);
 
+  // Intersection observers for each section
+  const [heroRef, heroInView] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [apartment2BRRef, apartment2BRInView] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [apartment3BRRef, apartment3BRInView] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [amenitiesRef, amenitiesInView] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [contactRef, contactInView] = useInView({ triggerOnce: false, threshold: 0.3 });
+
   // Hero carousel images
   const heroImages = [
     "/image1.jpg",
-    "/image2.jpg", 
+    "/image2.jpg",
     "/image3.jpg",
     "/image4.jpg"
   ];
@@ -33,21 +42,21 @@ const ServicesPage = () => {
   // 2 Bedroom apartment images
   const apartment2BR = [
     "/image1.jpg",
-    "/image2.jpg", 
+    "/image2.jpg",
     "/image3.jpg",
   ];
 
   // 3 Bedroom apartment images
   const apartment3BR = [
     "/image3.jpg",
-    "/image4.jpg", 
+    "/image4.jpg",
     "/image5.jpg",
   ];
 
   // Amenities images
   const amenitiesImages = [
     "/image1.jpg",
-    "/image2.jpg", 
+    "/image2.jpg",
     "/image3.jpg",
   ];
 
@@ -64,7 +73,7 @@ const ServicesPage = () => {
     const interval2BR = setInterval(() => {
       setApartment2BRIndex(prev => (prev + 1) % apartment2BR.length);
     }, 6000);
-    
+
     const interval3BR = setInterval(() => {
       setApartment3BRIndex(prev => (prev + 1) % apartment3BR.length);
     }, 7000);
@@ -78,7 +87,7 @@ const ServicesPage = () => {
       clearInterval(interval3BR);
       clearInterval(intervalAmenities);
     };
-  }, []);
+  }, [apartment2BR.length, apartment3BR.length, amenitiesImages.length]);
 
   const nextSlide = (currentIndex: number, images: string[], setter: (index: number) => void) => {
     setter((currentIndex + 1) % images.length);
@@ -91,14 +100,12 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Carousel */}
-      <section className="relative h-96 overflow-hidden">
+      <section ref={heroRef} className="relative h-96 overflow-hidden">
         <div className="relative w-full h-full">
           {heroImages.map((image, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === heroImageIndex ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === heroImageIndex ? 'opacity-100' : 'opacity-0'}`}
             >
               <img
                 src={image}
@@ -108,14 +115,26 @@ const ServicesPage = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="absolute inset-0 bg-black/50"></div>
-        
+
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-[#d4b502]">Our Services</h1>
-          <p className="text-xl md:text-2xl font-light max-w-3xl px-4">
+          <motion.h1
+            className="text-5xl md:text-6xl font-bold mb-4 text-[#d4b502]"
+            initial={{ opacity: 0, y: 50 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+          >
+            Our Services
+          </motion.h1>
+          <motion.p
+            className="text-xl md:text-2xl font-light max-w-3xl px-4"
+            initial={{ opacity: 0, y: 50 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+          >
             Premium Apartments & World-Class Amenities for Your Perfect Stay
-          </p>
+          </motion.p>
         </div>
 
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
@@ -123,9 +142,7 @@ const ServicesPage = () => {
             <button
               key={index}
               onClick={() => setHeroImageIndex(index)}
-              className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
-                index === heroImageIndex ? 'bg-[#d4b502]' : 'bg-white/50 hover:bg-white/80'
-              }`}
+              className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${index === heroImageIndex ? 'bg-[#d4b502]' : 'bg-white/50 hover:bg-white/80'}`}
             />
           ))}
         </div>
@@ -133,14 +150,25 @@ const ServicesPage = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
         {/* 2 Bedroom Apartment Section */}
-        <section className="mb-20">
+        <section ref={apartment2BRRef} className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">2 Bedroom Apartments</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.h2
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={apartment2BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+              2 Bedroom Apartments
+            </motion.h2>
+            <motion.p
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={apartment2BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            >
               Perfect for small families and professionals seeking comfort and style
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -150,9 +178,7 @@ const ServicesPage = () => {
                 {apartment2BR.map((image, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-700 ${
-                      index === apartment2BRIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-700 ${index === apartment2BRIndex ? 'opacity-100' : 'opacity-0'}`}
                   >
                     <img
                       src={image}
@@ -161,8 +187,7 @@ const ServicesPage = () => {
                     />
                   </div>
                 ))}
-                
-                {/* Navigation Buttons */}
+
                 <button
                   onClick={() => prevSlide(apartment2BRIndex, apartment2BR, setApartment2BRIndex)}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
@@ -176,7 +201,6 @@ const ServicesPage = () => {
                   <ChevronRight className="w-6 h-6 text-white" />
                 </button>
 
-                {/* Image Counter */}
                 <div className="absolute bottom-4 left-4 bg-black/50 rounded-full px-3 py-1">
                   <span className="text-white text-sm">
                     {apartment2BRIndex + 1} / {apartment2BR.length}
@@ -186,114 +210,170 @@ const ServicesPage = () => {
             </div>
 
             {/* Content */}
-            <div className="space-y-6">
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, x: 50 }}
+              animate={apartment2BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+            >
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-[#d4b502] rounded-full flex items-center justify-center">
                   <Bed className="w-6 h-6 dark:text-black text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Spacious 2BR Flat</h3>
+                <motion.h3
+                  className="text-2xl font-bold text-gray-900"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={apartment2BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                  transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
+                >
+                  Spacious 2BR Flat
+                </motion.h3>
               </div>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our 2-bedroom apartments offer the perfect blend of comfort and functionality. 
+              <motion.p
+                className="text-lg text-gray-600 leading-relaxed"
+                initial={{ opacity: 0, x: 20 }}
+                animate={apartment2BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
+              >
+                Our 2-bedroom apartments offer the perfect blend of comfort and functionality.
                 Ideal for couples, small families, or professionals who value quality living spaces.
-              </p>
+              </motion.p>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <Users className="w-5 h-5 text-[#d4b502]" />
-                  <span className="text-gray-700">2-4 Guests</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Calendar className="w-5 h-5 text-[#d4b502]" />
-                  <span className="text-gray-700">Daily/Weekly/Monthly</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Star className="w-5 h-5 text-[#d4b502]" />
-                  <span className="text-gray-700">Premium Rating</span>
-                </div>
+                {[
+                  { icon: Users, text: '2-4 Guests', delay: 0.7 },
+                  { icon: Calendar, text: 'Daily/Weekly/Monthly', delay: 0.8 },
+                  { icon: Star, text: 'Premium Rating', delay: 0.9 },
+                ].map(({ icon: Icon, text, delay }, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-3"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={apartment2BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay }}
+                  >
+                    <Icon className="w-5 h-5 text-[#d4b502]" />
+                    <span className="text-gray-700">{text}</span>
+                  </motion.div>
+                ))}
               </div>
 
               <ul className="space-y-3 text-gray-700">
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
-                  <span>Fully equipped modern kitchen</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
-                  <span>Spacious living and dining area</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
-                  <span>Two comfortable bedrooms</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
-                  <span>Modern bathroom facilities</span>
-                </li>
+                {[
+                  'Fully equipped modern kitchen',
+                  'Spacious living and dining area',
+                  'Two comfortable bedrooms',
+                  'Modern bathroom facilities',
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex items-center space-x-3"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={apartment2BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 0.7 + index * 0.1 }}
+                  >
+                    <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* 3 Bedroom Apartment Section */}
-        <section className="mb-20">
+        <section ref={apartment3BRRef} className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">3 Bedroom Apartments</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.h2
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={apartment3BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+              3 Bedroom Apartments
+            </motion.h2>
+            <motion.p
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={apartment3BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            >
               Luxurious accommodations ideal for larger families who value space and premium living
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
-            <div className="space-y-6 lg:order-1">
+            <motion.div
+              className="space-y-6 lg:order-1"
+              initial={{ opacity: 0, x: -50 }}
+              animate={apartment3BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+            >
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-[#d4b502] rounded-full flex items-center justify-center">
                   <Home className="w-6 h-6 dark:text-black text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Premium 3BR Flat</h3>
+                <motion.h3
+                  className="text-2xl font-bold text-gray-900"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={apartment3BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
+                >
+                  Premium 3BR Flat
+                </motion.h3>
               </div>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Experience luxury living in our spacious 3-bedroom apartments. Perfect for larger families 
+              <motion.p
+                className="text-lg text-gray-600 leading-relaxed"
+                initial={{ opacity: 0, x: -20 }}
+                animate={apartment3BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
+              >
+                Experience luxury living in our spacious 3-bedroom apartments. Perfect for larger families
                 or groups who don't want to compromise on comfort and style.
-              </p>
+              </motion.p>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <Users className="w-5 h-5 text-[#d4b502]" />
-                  <span className="text-gray-700">4-6 Guests</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Calendar className="w-5 h-5 text-[#d4b502]" />
-                  <span className="text-gray-700">Daily/Weekly/Monthly</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Star className="w-5 h-5 text-[#d4b502]" />
-                  <span className="text-gray-700">Luxury Rating</span>
-                </div>
+                {[
+                  { icon: Users, text: '4-6 Guests', delay: 0.7 },
+                  { icon: Calendar, text: 'Daily/Weekly/Monthly', delay: 0.8 },
+                  { icon: Star, text: 'Luxury Rating', delay: 0.9 },
+                ].map(({ icon: Icon, text, delay }, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={apartment3BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay }}
+                  >
+                    <Icon className="w-5 h-5 text-[#d4b502]" />
+                    <span className="text-gray-700">{text}</span>
+                  </motion.div>
+                ))}
               </div>
 
               <ul className="space-y-3 text-gray-700">
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
-                  <span>Three spacious bedrooms</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
-                  <span>Large living and dining areas</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
-                  <span>Premium kitchen appliances</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
-                  <span>Multiple bathroom facilities</span>
-                </li>
+                {[
+                  'Three spacious bedrooms',
+                  'Large living and dining areas',
+                  'Premium kitchen appliances',
+                  'Multiple bathroom facilities',
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex items-center space-x-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={apartment3BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 0.7 + index * 0.1 }}
+                  >
+                    <div className="w-2 h-2 bg-[#d4b502] rounded-full"></div>
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Carousel */}
             <div className="relative lg:order-2">
@@ -301,9 +381,7 @@ const ServicesPage = () => {
                 {apartment3BR.map((image, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-700 ${
-                      index === apartment3BRIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-700 ${index === apartment3BRIndex ? 'opacity-100' : 'opacity-0'}`}
                   >
                     <img
                       src={image}
@@ -312,7 +390,7 @@ const ServicesPage = () => {
                     />
                   </div>
                 ))}
-                
+
                 <button
                   onClick={() => prevSlide(apartment3BRIndex, apartment3BR, setApartment3BRIndex)}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
@@ -337,12 +415,24 @@ const ServicesPage = () => {
         </section>
 
         {/* Amenities Section */}
-        <section className="mb-20">
+        <section ref={amenitiesRef} className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Premium Amenities</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.h2
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={amenitiesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+              Premium Amenities
+            </motion.h2>
+            <motion.p
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={amenitiesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            >
               World-class facilities and services designed for your ultimate comfort and convenience
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 items-start">
@@ -352,9 +442,7 @@ const ServicesPage = () => {
                 {amenitiesImages.map((image, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-700 ${
-                      index === amenitiesIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-700 ${index === amenitiesIndex ? 'opacity-100' : 'opacity-0'}`}
                   >
                     <img
                       src={image}
@@ -363,7 +451,7 @@ const ServicesPage = () => {
                     />
                   </div>
                 ))}
-                
+
                 <button
                   onClick={() => prevSlide(amenitiesIndex, amenitiesImages, setAmenitiesIndex)}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
@@ -386,75 +474,100 @@ const ServicesPage = () => {
             </div>
 
             {/* Amenities List */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">What We Offer</h3>
-              
+            <motion.div
+              className="space-y-4"
+              initial={{ opacity: 0, x: 50 }}
+              animate={amenitiesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+            >
+              <motion.h3
+                className="text-2xl font-bold text-gray-900 mb-6"
+                initial={{ opacity: 0, x: 20 }}
+                animate={amenitiesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
+              >
+                What We Offer
+              </motion.h3>
               <div className="space-y-4">
-                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <Zap className="w-6 h-6 text-[#d4b502]" />
-                    <span className="font-semibold text-gray-800">24hrs Power Supply</span>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <Shield className="w-6 h-6 text-[#d4b502]" />
-                    <span className="font-semibold text-gray-800">Maximum Security</span>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <Camera className="w-6 h-6 text-[#d4b502]" />
-                    <span className="font-semibold text-gray-800">CCTV Surveillance</span>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <WashingMachine className="w-6 h-6 text-[#d4b502]" />
-                    <span className="font-semibold text-gray-800">Washing Machine</span>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <Car className="w-6 h-6 text-[#d4b502]" />
-                    <span className="font-semibold text-gray-800">Secure Parking</span>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <Wifi className="w-6 h-6 text-[#d4b502]" />
-                    <span className="font-semibold text-gray-800">High-Speed WiFi</span>
-                  </div>
-                </div>
+                {[
+                  { icon: Zap, text: '24hrs Power Supply', delay: 0.6 },
+                  { icon: Shield, text: 'Maximum Security', delay: 0.7 },
+                  { icon: Camera, text: 'CCTV Surveillance', delay: 0.8 },
+                  { icon: WashingMachine, text: 'Washing Machine', delay: 0.9 },
+                  { icon: Car, text: 'Secure Parking', delay: 1.0 },
+                  { icon: Wifi, text: 'High-Speed WiFi', delay: 1.1 },
+                ].map(({ icon: Icon, text, delay }, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={amenitiesInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      ease: 'easeOut',
+                      delay,
+                      scale: { type: 'spring', stiffness: 200, damping: 10 },
+                    }}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <Icon className="w-6 h-6 text-[#d4b502]" />
+                      <span className="font-semibold text-gray-800">{text}</span>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Contact CTA */}
-        <section className="dark:bg-gradient-to-r shadow-md from-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white">
-          <h3 className="text-3xl font-bold mb-4 text-[#d4b502]">Ready to Book Your Perfect Stay?</h3>
-          <p className="text-xl dark:text-gray-300 text-gray-700 mb-8 max-w-2xl mx-auto">
+        <section ref={contactRef} className="dark:bg-gradient-to-r shadow-md from-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white">
+          <motion.h3
+            className="text-3xl font-bold mb-4 text-[#d4b502]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            Ready to Book Your Perfect Stay?
+          </motion.h3>
+          <motion.p
+            className="text-xl dark:text-gray-300 text-gray-700 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+          >
             Experience luxury living at Glorious Apartment. Contact us today to reserve your premium accommodation.
-          </p>
+          </motion.p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <motion.a
               href="tel:+2348039636839"
-              className="inline-flex items-center px-8 py-4 bg-[#d4b502] dark:text-black font-bold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-[#d4b502] dark:text-black font-bold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={contactInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                duration: 0.6,
+                ease: 'easeOut',
+                scale: { type: 'spring', stiffness: 200, damping: 10 },
+              }}
             >
               📞 Call Now: +234 803 9636 839
-            </a>
-            <button
+            </motion.a>
+            <motion.button
               onClick={() => window.location.href = '/contact'}
               className="inline-flex items-center px-8 py-4 border-2 border-[#d4b502] text-[#d4b502] font-bold rounded-lg hover:bg-[#d4b502] dark:hover:text-black hover:text-white transition-all cursor-pointer duration-300"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={contactInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                duration: 0.6,
+                ease: 'easeOut',
+                delay: 0.2,
+                scale: { type: 'spring', stiffness: 200, damping: 10 },
+              }}
             >
               Get More Info
-            </button>
+            </motion.button>
           </div>
         </section>
       </main>
