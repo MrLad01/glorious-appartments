@@ -98,7 +98,7 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-white">
       {/* Hero Section with Carousel */}
       <section ref={heroRef} className="relative h-96 overflow-hidden">
         <div className="relative w-full h-full">
@@ -154,7 +154,7 @@ const ServicesPage = () => {
         <section ref={apartment2BRRef} className="mb-20">
           <div className="text-center mb-12">
             <motion.h2
-              className="text-4xl font-bold text-gray-900 mb-4"
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={apartment2BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -162,7 +162,7 @@ const ServicesPage = () => {
               2 Bedroom Apartments
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-300  max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={apartment2BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -221,7 +221,7 @@ const ServicesPage = () => {
                   <Bed className="w-6 h-6 dark:text-black text-white" />
                 </div>
                 <motion.h3
-                  className="text-2xl font-bold text-gray-900"
+                  className="text-2xl font-bold text-gray-900 dark:text-white"
                   initial={{ opacity: 0, x: 20 }}
                   animate={apartment2BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                   transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
@@ -231,7 +231,7 @@ const ServicesPage = () => {
               </div>
 
               <motion.p
-                className="text-lg text-gray-600 leading-relaxed"
+                className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
                 initial={{ opacity: 0, x: 20 }}
                 animate={apartment2BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
@@ -254,12 +254,12 @@ const ServicesPage = () => {
                     transition={{ duration: 0.6, ease: 'easeOut', delay }}
                   >
                     <Icon className="w-5 h-5 text-[#d4b502]" />
-                    <span className="text-gray-700">{text}</span>
+                    <span className="text-gray-700 dark:text-gray-400">{text}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3  md:grid md:grid-cols-2 text-gray-700 dark:text-gray-400">
                 {[
                   'Fully equipped modern kitchen',
                   'Spacious living and dining area',
@@ -286,7 +286,7 @@ const ServicesPage = () => {
         <section ref={apartment3BRRef} className="mb-20">
           <div className="text-center mb-12">
             <motion.h2
-              className="text-4xl font-bold text-gray-900 mb-4"
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={apartment3BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -294,7 +294,7 @@ const ServicesPage = () => {
               3 Bedroom Apartments
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={apartment3BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -316,7 +316,7 @@ const ServicesPage = () => {
                   <Home className="w-6 h-6 dark:text-black text-white" />
                 </div>
                 <motion.h3
-                  className="text-2xl font-bold text-gray-900"
+                  className="text-2xl font-bold text-gray-900 dark:text-white"
                   initial={{ opacity: 0, x: -20 }}
                   animate={apartment3BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                   transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
@@ -326,7 +326,7 @@ const ServicesPage = () => {
               </div>
 
               <motion.p
-                className="text-lg text-gray-600 leading-relaxed"
+                className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
                 initial={{ opacity: 0, x: -20 }}
                 animate={apartment3BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
@@ -349,12 +349,12 @@ const ServicesPage = () => {
                     transition={{ duration: 0.6, ease: 'easeOut', delay }}
                   >
                     <Icon className="w-5 h-5 text-[#d4b502]" />
-                    <span className="text-gray-700">{text}</span>
+                    <span className="text-gray-700 dark:text-gray-400">{text}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 md:grid md:grid-cols-2 text-gray-700 dark:text-gray-400">
                 {[
                   'Three spacious bedrooms',
                   'Large living and dining areas',
@@ -418,7 +418,7 @@ const ServicesPage = () => {
         <section ref={amenitiesRef} className="mb-20">
           <div className="text-center mb-12">
             <motion.h2
-              className="text-4xl font-bold text-gray-900 mb-4"
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={amenitiesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -426,7 +426,7 @@ const ServicesPage = () => {
               Premium Amenities
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={amenitiesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -481,7 +481,7 @@ const ServicesPage = () => {
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
             >
               <motion.h3
-                className="text-2xl font-bold text-gray-900 mb-6"
+                className="text-2xl font-bold text-gray-900 dark:text-white mb-6"
                 initial={{ opacity: 0, x: 20 }}
                 animate={amenitiesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
@@ -499,7 +499,7 @@ const ServicesPage = () => {
                 ].map(({ icon: Icon, text, delay }, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                    className="bg-white dark:bg-transparent dark:border dark:text-gray-400 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={amenitiesInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
                     transition={{
@@ -511,7 +511,7 @@ const ServicesPage = () => {
                   >
                     <div className="flex items-center space-x-3">
                       <Icon className="w-6 h-6 text-[#d4b502]" />
-                      <span className="font-semibold text-gray-800">{text}</span>
+                      <span className="font-semibold text-gray-800 dark:text-gray-400">{text}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -521,7 +521,7 @@ const ServicesPage = () => {
         </section>
 
         {/* Contact CTA */}
-        <section ref={contactRef} className="dark:bg-gradient-to-r shadow-md from-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white">
+        <section ref={contactRef} className="dark:bg-gradient-to-r shadow-md from-gray-900 dark:from-gray-800 to-gray-800 rounded-2xl p-12 text-center text-white">
           <motion.h3
             className="text-3xl font-bold mb-4 text-[#d4b502]"
             initial={{ opacity: 0, y: 20 }}
@@ -555,7 +555,7 @@ const ServicesPage = () => {
             </motion.a>
             <motion.button
               onClick={() => window.location.href = '/contact'}
-              className="inline-flex items-center px-8 py-4 border-2 border-[#d4b502] text-[#d4b502] font-bold rounded-lg hover:bg-[#d4b502] dark:hover:text-black hover:text-white transition-all cursor-pointer duration-300"
+              className="inline-flex items-center px-8 py-4 border-2 border-[#d4b502] text-[#d4b502] font-bold rounded-lg transition-all cursor-pointer duration-300"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={contactInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
               whileHover={{ scale: 1.05 }}

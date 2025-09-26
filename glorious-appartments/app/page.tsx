@@ -229,7 +229,7 @@ export default function Home() {
         )}
       </div>
 
-      <section ref={servicesRef} className="py-20 bg-white">
+      <section ref={servicesRef} className="py-20 bg-white dark:bg-gray-900 dark:text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -244,7 +244,7 @@ export default function Home() {
               Our Premium Services
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-500 max-w-3xl mx-auto"
+              className="text-xl text-gray-500 dark:text-white max-w-3xl mx-auto"
               variants={fadeInUp}
             >
               Experience luxury and comfort with our fully equipped apartments and world-class amenities
@@ -270,8 +270,8 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-            <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+            <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10 dark:bg-none"></div>
+            <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10 dark:bg-none"></div>
           </div>
 
           <motion.div
@@ -294,12 +294,12 @@ export default function Home() {
                 <div className="h-48 bg-white dark:bg-gradient-to-br dark:from-[#d4b502]/20 dark:to-[#d4b502]/5 flex items-center justify-center dark:border-0 border-b border-gray-300">
                   <div className="text-center">
                     <motion.div
-                      className="w-16 h-16 bg-[#d4b502] rounded-full flex items-center justify-center mx-auto mb-4"
+                      className="w-16 h-16 bg-[#d4b502] dark:bg-[#dcc752] rounded-full flex items-center justify-center mx-auto mb-4"
                       whileHover={{ scale: 1.1, transition: { type: "spring", stiffness: 200, damping: 15 } }}
                     >
                       <span className="text-2xl font-bold dark:text-black">{item.icon}</span>
                     </motion.div>
-                    <h3 className="text-xl font-bold dark:text-white text-gray-700">{item.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-700">{item.title}</h3>
                   </div>
                 </div>
                 <div className="p-6">
@@ -322,7 +322,7 @@ export default function Home() {
           >
             <motion.button
               onClick={() => window.location.href = '/services'}
-              className="inline-flex items-center rounded-lg px-8 py-4 bg-[#d4b502] dark:text-black font-bold hover:bg-yellow-300 transition-all duration-300"
+              className="inline-flex items-center rounded-lg px-8 py-4 bg-[#d4b502] dark:text-[#fcfbf7] font-bold hover:bg-yellow-300 transition-all duration-300"
               whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 200, damping: 15 } }}
               whileTap={{ scale: 0.95, transition: { type: "spring", stiffness: 200, damping: 15 } }}
             >
@@ -335,7 +335,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section ref={whyChooseRef} className="py-20 bg-gray-100">
+      <section ref={whyChooseRef} className="py-20 bg-gray-100 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -350,7 +350,7 @@ export default function Home() {
               Why Choose Glorious Apartment?
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-500 max-w-3xl mx-auto"
+              className="text-xl text-gray-500 dark:text-white max-w-3xl mx-auto"
               variants={fadeInUp}
             >
               We provide more than just accommodation - we offer a complete living experience
@@ -376,8 +376,8 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-            <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+            <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10 dark:bg-none"></div>
+            <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10 dark:bg-none"></div>
           </div>
 
           <motion.div
@@ -414,7 +414,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section ref={contactRef} className="py-20 bg-white">
+      <section ref={contactRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -429,7 +429,7 @@ export default function Home() {
               Ready to Book Your Stay?
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-500 max-w-3xl mx-auto"
+              className="text-xl text-gray-500 dark:text-white max-w-3xl mx-auto"
               variants={fadeInUp}
             >
               Contact us today to secure your premium apartment and experience luxury living at its finest
@@ -476,7 +476,7 @@ export default function Home() {
           >
             <motion.button
               onClick={() => window.location.href = '/contact'}
-              className="inline-flex items-center px-10 py-4 bg-[#d4b502] dark:text-black font-bold text-lg hover:bg-yellow-300 transition-all duration-300 rounded-md shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-10 py-4 bg-[#d4b502] dark:text-[#fcfbf7] font-bold text-lg hover:bg-yellow-300 transition-all duration-300 rounded-md shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 200, damping: 15 } }}
               whileTap={{ scale: 0.95, transition: { type: "spring", stiffness: 200, damping: 15 } }}
             >

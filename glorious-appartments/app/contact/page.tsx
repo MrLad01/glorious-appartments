@@ -28,7 +28,7 @@ const ContactUs = () => {
   }, [carouselImages.length]);
 
   return (
-    <div className="min-h-screen font-sans bg-gray-50">
+    <div className="min-h-screen font-sans bg-gray-50 dark:bg-gray-900">
       <header ref={headerRef} className="relative h-96 overflow-hidden">
         <div className="relative w-full h-full">
           {carouselImages.map((image, index) => (
@@ -92,7 +92,7 @@ const ContactUs = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <motion.h2
-              className="text-4xl font-bold text-gray-900 mb-6"
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={mainInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -100,7 +100,7 @@ const ContactUs = () => {
               Let's Connect
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={mainInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -174,7 +174,7 @@ const ContactUs = () => {
             ].map(({ icon: Icon, title, content, delay }, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-xl shadow-lg p-8 border-l-4 border-[#b39800]"
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border-l-4 border-[#b39800]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={mainInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 whileHover={{ scale: 1.1 }}
@@ -190,7 +190,7 @@ const ContactUs = () => {
                     <Icon className="w-8 h-8 dark:text-black text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300 mb-2">{title}</h3>
                     {content}
                   </div>
                 </div>

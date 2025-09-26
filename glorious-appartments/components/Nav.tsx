@@ -79,7 +79,7 @@ function Nav() {
       
       <motion.nav
         ref={navRef}
-        className="w-full h-[3.6rem] text-[#d4b502] dark:text-white shadow-md dark:border-b flex items-center justify-between px-10 text-[16px]"
+        className="w-full h-[3.6rem] text-[#d4b502] dark:bg-gray-900 dark:text-white shadow-md dark:border-b flex items-center justify-between px-10 text-[16px]"
         initial="hidden"
         animate={navInView ? "visible" : "hidden"}
         variants={{
