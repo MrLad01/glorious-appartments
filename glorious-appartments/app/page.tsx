@@ -238,13 +238,13 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.h2
-              className="text-4xl font-bold text-[#d4b502] mb-4"
+              className="lg:text-4xl text-2xl font-bold text-[#d4b502] mb-4"
               variants={fadeInUp}
             >
               Our Premium Services
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-500 dark:text-white max-w-3xl mx-auto"
+              className="md:text-xl text-sm text-gray-500 dark:text-white max-w-3xl mx-auto"
               variants={fadeInUp}
             >
               Experience luxury and comfort with our fully equipped apartments and world-class amenities
@@ -344,13 +344,13 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.h2
-              className="text-4xl font-bold text-[#d4b502] mb-4"
+              className="lg:text-4xl text-2xl font-bold text-[#d4b502] mb-4"
               variants={fadeInUp}
             >
               Why Choose Glorious Apartment?
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-500 dark:text-white max-w-3xl mx-auto"
+              className="lg:text-xl text-sm text-gray-500 dark:text-white max-w-3xl mx-auto"
               variants={fadeInUp}
             >
               We provide more than just accommodation - we offer a complete living experience
@@ -423,13 +423,13 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.h2
-              className="text-4xl font-bold text-[#d4b502] mb-4"
+              className="lg:text-4xl text-2xl font-bold text-[#d4b502] mb-4"
               variants={fadeInUp}
             >
               Ready to Book Your Stay?
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-500 dark:text-white max-w-3xl mx-auto"
+              className="lg:text-xl text-sm text-gray-500 dark:text-white max-w-3xl mx-auto"
               variants={fadeInUp}
             >
               Contact us today to secure your premium apartment and experience luxury living at its finest

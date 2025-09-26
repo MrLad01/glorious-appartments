@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from "@/app/favicon.ico"
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
@@ -21,9 +22,9 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold text-[#ffffff] mb-4">Explore</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-[#ffffff] hover:text-[#d4b502] transition-colors">Home</a></li>
-              <li><a href="#" className="text-[#ffffff] hover:text-[#d4b502] transition-colors">Services</a></li>
-              <li><a href="#" className="text-[#ffffff] hover:text-[#d4b502] transition-colors">Contact Us</a></li>
+              <li><Link href="/" className="text-[#ffffff] hover:text-[#d4b502] transition-colors">Home</Link></li>
+              <li><Link href="/services" className="text-[#ffffff] hover:text-[#d4b502] transition-colors">Services</Link></li>
+              <li><Link href="/contact" className="text-[#ffffff] hover:text-[#d4b502] transition-colors">Contact Us</Link></li>
             </ul>
           </div>
         </div>
