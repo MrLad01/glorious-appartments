@@ -36,7 +36,7 @@ function Nav() {
         type: "spring" as const, 
         stiffness: 150, 
         damping: 20, 
-        duration: 1.2 
+        duration: 0.6
       } 
     }
   }
@@ -50,7 +50,7 @@ function Nav() {
         type: "spring" as const, 
         stiffness: 300, 
         damping: 10, 
-        duration: 1.2 
+        duration: 0.6
       } 
     }
   }
@@ -85,7 +85,7 @@ function Nav() {
         stiffness: 300,
         damping: 30,
         staggerChildren: 0.1,
-        delayChildren: 0.1
+        delayChildren: 0.05
       }
     }
   }
@@ -151,7 +151,7 @@ function Nav() {
           visible: {
             opacity: 1,
             transition: {
-              staggerChildren: 0.3
+              staggerChildren: 0.2
             }
           }
         }}

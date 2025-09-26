@@ -118,7 +118,7 @@ export default function Home() {
         type: "spring", 
         stiffness: 40, 
         damping: 20, 
-        duration: 1.2 
+        duration: 0.6 
       } 
     }
   };
@@ -128,7 +128,8 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3
+        staggerChildren: 0.3,
+        delay: 0.1
       }
     }
   };
@@ -161,7 +162,7 @@ export default function Home() {
         )}
 
         <div className="absolute inset-0 bg-black/30" />
-
+{/* 
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <motion.div
@@ -187,7 +188,7 @@ export default function Home() {
               </motion.button>
             </motion.div>
           </div>
-        </div>
+        </div> */}
 
         <AnimatePresence>
           {videoLoaded && !videoError && (

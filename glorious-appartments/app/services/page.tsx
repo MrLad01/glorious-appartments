@@ -131,7 +131,7 @@ const ServicesPage = () => {
             className="text-lg md:text-2xl font-light max-w-3xl px-4"
             initial={{ opacity: 0, y: 50 }}
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.04 }}
           >
             Premium Apartments & World-Class Amenities for Your Perfect Stay
           </motion.p>
@@ -157,7 +157,7 @@ const ServicesPage = () => {
               className="lg:text-4xl text-2xl font-bold text-gray-900 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={apartment2BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
             >
               2 Bedroom Apartments
             </motion.h2>
@@ -165,7 +165,7 @@ const ServicesPage = () => {
               className="lg:text-xl text-base text-gray-600 dark:text-gray-300  max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={apartment2BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.04 }}
             >
               Perfect for small families and professionals seeking comfort and style
             </motion.p>
@@ -214,7 +214,7 @@ const ServicesPage = () => {
               className="space-y-6"
               initial={{ opacity: 0, x: 50 }}
               animate={apartment2BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
             >
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-[#d4b502] rounded-full flex items-center justify-center">
@@ -289,7 +289,7 @@ const ServicesPage = () => {
               className="md:text-4xl text-2xl font-bold text-gray-900 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={apartment3BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
             >
               3 Bedroom Apartments
             </motion.h2>
@@ -297,7 +297,7 @@ const ServicesPage = () => {
               className="md:text-xl text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={apartment3BRInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.04 }}
             >
               Luxurious accommodations ideal for larger families who value space and premium living
             </motion.p>
@@ -309,7 +309,7 @@ const ServicesPage = () => {
               className="space-y-6 lg:order-1"
               initial={{ opacity: 0, x: -50 }}
               animate={apartment3BRInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
             >
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-[#d4b502] rounded-full flex items-center justify-center">
@@ -421,7 +421,7 @@ const ServicesPage = () => {
               className="md:text-4xl text-2xl font-bold text-gray-900 dark:text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={amenitiesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
             >
               Premium Amenities
             </motion.h2>
@@ -429,7 +429,7 @@ const ServicesPage = () => {
               className="md:text-xl text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={amenitiesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.04 }}
             >
               World-class facilities and services designed for your ultimate comfort and convenience
             </motion.p>
@@ -478,13 +478,13 @@ const ServicesPage = () => {
               className="space-y-4"
               initial={{ opacity: 0, x: 50 }}
               animate={amenitiesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
             >
               <motion.h3
                 className="md:text-2xl text-lg font-bold text-gray-900 dark:text-white mb-6"
                 initial={{ opacity: 0, x: 20 }}
                 animate={amenitiesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
               >
                 What We Offer
               </motion.h3>
@@ -526,7 +526,7 @@ const ServicesPage = () => {
             className="md:text-3xl text-xl font-bold mb-4 text-[#d4b502]"
             initial={{ opacity: 0, y: 20 }}
             animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             Ready to Book Your Perfect Stay?
           </motion.h3>
@@ -534,7 +534,7 @@ const ServicesPage = () => {
             className="md:text-xl text-sm dark:text-gray-300 text-gray-700 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.04 }}
           >
             Experience luxury living at Glorious Apartment. Contact us today to reserve your premium accommodation.
           </motion.p>
@@ -562,7 +562,7 @@ const ServicesPage = () => {
               transition={{
                 duration: 0.6,
                 ease: 'easeOut',
-                delay: 0.2,
+                delay: 0.04,
                 scale: { type: 'spring', stiffness: 200, damping: 10 },
               }}
             >

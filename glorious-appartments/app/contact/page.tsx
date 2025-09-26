@@ -54,7 +54,7 @@ const ContactUs = () => {
             className="text-4xl md:text-6xl font-bold mb-4 text-[#b39800]"
             initial={{ opacity: 0, y: 50 }}
             animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             Contact Us
           </motion.h1>
@@ -62,7 +62,7 @@ const ContactUs = () => {
             className="text-base md:text-2xl font-light max-w-2xl px-4"
             initial={{ opacity: 0, y: 50 }}
             animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
           >
             Get in Touch with Glorious Apartment - Your Gateway to Luxury Living
           </motion.p>
@@ -72,7 +72,7 @@ const ContactUs = () => {
           className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={headerInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
         >
           {carouselImages.map((_, index) => (
             <button
@@ -126,7 +126,7 @@ const ContactUs = () => {
                     <p className="text-gray-500 mt-1">Available 24/7</p>
                   </>
                 ),
-                delay: 0.4
+                delay: 0.2
               },
               {
                 icon: Mail,
@@ -179,7 +179,7 @@ const ContactUs = () => {
                 animate={mainInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 whileHover={{ scale: 1.1 }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.4,
                   ease: 'easeOut',
                   delay,
                   scale: { type: 'spring', stiffness: 200, damping: 10 }
