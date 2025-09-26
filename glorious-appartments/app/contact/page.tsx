@@ -8,8 +8,8 @@ const ContactUs = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Intersection observers for header and main sections
-  const [headerRef, headerInView] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [mainRef, mainInView] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [headerRef, headerInView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [mainRef, mainInView] = useInView({ triggerOnce: false, threshold: 0.1 });
 
   const carouselImages = [
     "/image1.jpg",

@@ -25,11 +25,11 @@ const ServicesPage = () => {
   const [amenitiesIndex, setAmenitiesIndex] = useState(0);
 
   // Intersection observers for each section
-  const [heroRef, heroInView] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [apartment2BRRef, apartment2BRInView] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [apartment3BRRef, apartment3BRInView] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [amenitiesRef, amenitiesInView] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [contactRef, contactInView] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [heroRef, heroInView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [apartment2BRRef, apartment2BRInView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [apartment3BRRef, apartment3BRInView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [amenitiesRef, amenitiesInView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [contactRef, contactInView] = useInView({ triggerOnce: false, threshold: 0.1 });
 
   // Hero carousel images
   const heroImages = [

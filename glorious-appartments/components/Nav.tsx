@@ -24,7 +24,7 @@ function Nav() {
   }, [isMobileMenuOpen])
   
   // Intersection observer for nav
-  const [navRef, navInView] = useInView({ triggerOnce: false, threshold: 0.3 })
+  const [navRef, navInView] = useInView({ triggerOnce: false, threshold: 0.1 })
 
   // Animation variants
   const fadeInUp = {

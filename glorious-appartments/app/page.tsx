@@ -10,10 +10,10 @@ export default function Home() {
   const [videoError, setVideoError] = useState(false);
 
   // Intersection observers for each section
-  const [heroRef, heroInView] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [servicesRef, servicesInView] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [whyChooseRef, whyChooseInView] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [contactRef, contactInView] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [heroRef, heroInView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [servicesRef, servicesInView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [whyChooseRef, whyChooseInView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [contactRef, contactInView] = useInView({ triggerOnce: false, threshold: 0.1 });
 
   const img1 = "/image1.jpg";
   const img2 = "/image2.jpg";
