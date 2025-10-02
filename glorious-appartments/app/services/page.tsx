@@ -536,7 +536,7 @@ const ServicesPage = () => {
             animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.04 }}
           >
-            Experience luxury living at Glorious Apartment. Contact us today to reserve your premium accommodation.
+            Experience luxury living at De Glorious Home. Contact us today to reserve your premium accommodation.
           </motion.p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a

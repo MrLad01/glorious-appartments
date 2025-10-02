@@ -176,13 +176,13 @@ function Nav() {
               className="font-light transition-all duration-300 group-hover:text-yellow-400 dark:group-hover:text-yellow-300 hidden xs:block sm:block"
               variants={fadeInUp}
             >
-              Glorious Apartments
+              DE GLORIOUS HOMES LITE LTD
             </motion.span>
             <motion.span 
               className="font-light transition-all duration-300 group-hover:text-yellow-400 dark:group-hover:text-yellow-300 block xs:hidden sm:hidden"
               variants={fadeInUp}
             >
-              Glorious Apartments
+              DE GLORIOUS HOMES LITE LTD
             </motion.span>
           </Link>
         </motion.div>

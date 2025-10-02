@@ -348,7 +348,7 @@ export default function Home() {
               className="lg:text-4xl text-2xl font-bold text-[#d4b502] mb-4"
               variants={fadeInUp}
             >
-              Why Choose Glorious Apartment?
+              Why Choose De Glorious Home?
             </motion.h2>
             <motion.p
               className="lg:text-xl text-sm text-gray-500 dark:text-white max-w-3xl mx-auto"

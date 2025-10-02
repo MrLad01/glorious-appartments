@@ -64,7 +64,7 @@ const ContactUs = () => {
             animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
           >
-            Get in Touch with Glorious Apartment - Your Gateway to Luxury Living
+            Get in Touch with De Glorious Home - Your Gateway to Luxury Living
           </motion.p>
         </div>
 

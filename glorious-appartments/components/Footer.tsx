@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <div className="mb-6 md:mb-0">
             <div className="flex items-center mb-4">
               <Image src={logo} alt="" height={28} width={30} className="shadow-md" />
-              <span className="ml-3 text-xl font-bold text-[#ffffff]">Glorious Apartment</span>
+              <span className="ml-3 text-xl font-bold text-[#ffffff]">DE GLORIOUS HOMES LITE LTD</span>
             </div>
             <p className="text-sm text-[#ffffff]">
               Experience modern living with top-notch amenities.
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="mt-8 pt-4 border-t border-[#ffffff] text-center text-[#ffffff] text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Glorious Apartment. All rights reserved. Designed with{' '}
+            &copy; {new Date().getFullYear()} De Glorious Home Lite. All rights reserved. Designed with{' '}
             <span className="text-[#d4b502]">♥</span> in Abeokuta.
           </p>
         </div>
