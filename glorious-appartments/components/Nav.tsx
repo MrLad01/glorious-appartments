@@ -173,7 +173,7 @@ function Nav() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500 highlight-sweep"></div>
             </motion.div>
             <motion.span 
-              className="font-light transition-all duration-300 group-hover:text-yellow-400 dark:group-hover:text-yellow-300 hidden xs:block sm:block"
+              className="font-light transition-all duration-300 group-hover:text-yellow-400 dark:group-hover:text-yellow-300 hidden xs:block sm:block text-[13px]"
               variants={fadeInUp}
             >
               DE GLORIOUS HOMES 
